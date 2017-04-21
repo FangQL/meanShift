@@ -24,7 +24,7 @@ while 1:
 		cv2.normalize(roi_hist,roi_hist,0,255,cv2.NORM_MINMAX)
 		print(np.size(frame))
 	
-		frame = cv2.rectangle(frame, (r,c), (r+w,c+h), 255,2)
+		c = cv2.rectangle(frame, (r,c), (r+w,c+h), 255,2)
 		print(np.size(frame))
 
 		cv2.imshow('img2',frame)
