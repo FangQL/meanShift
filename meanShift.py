@@ -47,7 +47,7 @@ while(1):
 		ret, track_window = cv2.meanShift(dst, track_window, term_crit)
 		# Draw it on image
 		x,y,w,h = track_window
-		c = cv2.rectangle(frame, (x,y), (x+w,y+h), (0,0,255),15)		
+		c = cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0),15)		
 		cv2.imshow('img2',frame)
 		k = cv2.waitKey(60) & 0xff
 		if k == 27:
