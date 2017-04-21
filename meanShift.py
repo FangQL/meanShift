@@ -12,6 +12,7 @@ print("Calibration started")
 while 1:
 	
 	ret,frame = cap.read()
+	print(size(frame))
 	if ret == True:
 		roi = frame[r:r+h, c:c+w]
 		hsv_roi =  cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
