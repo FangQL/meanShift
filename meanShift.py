@@ -7,6 +7,7 @@ ret,frame = cap.read()
 r,h,c,w = 250,90,300,125  # simply hardcoded the values
 track_window = (c,r,w,h)
 # set up the ROI for tracking
+cv2.namedWindow("img2")
 print("Calibration started")
 while 1:
 	
@@ -18,7 +19,10 @@ while 1:
 		roi_hist = cv2.calcHist([hsv_roi],[0],mask,[180],[0,180])
 		cv2.normalize(roi_hist,roi_hist,0,255,cv2.NORM_MINMAX)
 		k = cv2.waitKey(60) & 0xff
+		img2 = cv2.rectangle(frame, (r,c), (r+w,c+h), 255,2)
+		cv2.imshow('img2',img2)
 		if k == 27:
+			print("Calibration finished")
 			break
 	else :
 		print("Calibration failed")
