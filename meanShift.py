@@ -13,7 +13,7 @@ while 1:
 	
 	ret,frame = cap.read()
 	if ret == True:
-		r,h,c,w = 0,90,0,125  # simply hardcoded the values
+		r,h,c,w = 0,45,0,60  # simply hardcoded the values
 		roi = frame[r:(r+h), c:(c+w)]
 		hsv_roi =  cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
@@ -47,8 +47,8 @@ while(1):
 		ret, track_window = cv2.meanShift(dst, track_window, term_crit)
 		# Draw it on image
 		x,y,w,h = track_window
-		img2 = cv2.rectangle(frame, (x,y), (x+w,y+h), 255,2)
-		cv2.imshow('img2',img2)
+		c = cv2.rectangle(frame, (x,y), (x+w,y+h), (0,0,255),15)		
+		cv2.imshow('img2',frame)
 		k = cv2.waitKey(60) & 0xff
 		if k == 27:
 			break
