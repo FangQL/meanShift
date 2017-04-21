@@ -13,6 +13,7 @@ while 1:
 	
 	ret,frame = cap.read()
 	if ret == True:
+		r,h,c,w = 250,90,300,125  # simply hardcoded the values
 		roi = frame[r:(r+h), c:(c+w)]
 		hsv_roi =  cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
