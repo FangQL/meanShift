@@ -53,7 +53,8 @@ while(1):
 		if k == 27:
 			break
 		else:
-			cv2.imwrite(chr(k)+".jpg",img2)
+			pass
+			#cv2.imwrite(chr(k)+".jpg",img2)
 	else:
 		break
 cv2.destroyAllWindows()
